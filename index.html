@@ -180,11 +180,14 @@
             bottom: 0;
             right: 20px;
             width: 600px;
+            height: 550px; /* Megnövelt magasság */
             background-color: white;
             border-radius: 10px 10px 0 0;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
             z-index: 100;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .compose-header {
@@ -194,6 +197,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
         }
         
         .compose-title {
@@ -202,6 +206,8 @@
         
         .compose-body {
             padding: 15px;
+            flex: 1;
+            overflow-y: auto;
         }
         
         .compose-row {
@@ -228,7 +234,7 @@
             width: 100%;
             border: none;
             outline: none;
-            min-height: 200px;
+            height: 330px; /* Megnövelt magasság */
             resize: none;
             font-family: Arial, sans-serif;
             line-height: 1.5;
@@ -390,7 +396,7 @@
         </div>
         
         <div class="content">
-            <div style="display: flex; height: 100%;">
+            <div>
                 <div style="width: 100%; overflow-y: auto;" id="emailListContainer">
                     <div style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; cursor: pointer;" class="email-list-item active">
                         <div style="padding: 5px 10px;">
@@ -504,7 +510,7 @@
                     </div>
                 </div>
             </div>
-            <div id="emailContentContainer" style="display: none; padding: 20px; height: 100%; overflow-y: auto;">
+            <div id="emailContentContainer" style="display: none; flex: 1; height: 100%; overflow-y: auto;">
                 <div class="email-header">
                     <div class="email-subject">RE: Hogy vagy?</div>
                     <div class="email-info">
@@ -518,6 +524,10 @@
                 
                 <div class="email-body">
                     <p>Köszi a csomagot, kéne pénz is némi.</p>
+                    
+                    <div style="text-align: center; margin: 20px 0;">
+                        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2t4NDJjc3Bpamx4Y3A2eHAwNGU5enQ2OGY1bHBwNDY2OXhiaWo3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TESHV9Tmoi6bWEhUAb/giphy.gif" alt="Pénzkérő GIF" style="max-width: 100%; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" />
+                    </div>
                     
                     <p style="color: #888; font-size: 12px; margin-top: 30px; border-top: 1px solid #eee; padding-top: 10px;">Az iPhone-omról küldve</p>
                 </div>
@@ -557,20 +567,23 @@
                     <input type="text" class="compose-input" value="Hogy vagy?">
                 </div>
                 
-                <textarea class="compose-textarea">Gyermekem, jól vagy-e London városában? 
+                <textarea class="compose-textarea">Gyermekem, jól vagy-e London városában?
 Megjött-e a csomag? Benne kis kolbász van!
 
 
-Egyél ám! Nem fázol? Van ott meleg holmi? 
+Egyél ám! Nem fázol? Van ott meleg holmi?
 Inglisül beszélsz már? Tudunk majd szkájpolni?
 
 
-Kell-e pénz? Idenézz, nem élünk nagy lábon, 
+Kell-e pénz? Idenézz, nem élünk nagy lábon,
 De amit spórulunk, összeguberálom.
 
 
-Hát az az egyetem? Gyűjtesz a tandíjra? 
+Hát az az egyetem? Gyűjtesz a tandíjra?
 S az a lány? Gwendoline... Olyan, mint egy díva!
+
+
+Nagyon aggódom érted, kérlek írj hamar! 😢
 
 
 Szeretettel,
